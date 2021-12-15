@@ -2,15 +2,15 @@
 	"name": "wranglingGITsink",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage1WranglingGIt",
+			"referenceName": "AzureDataLakeStorage2GITWRANGLING",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
-				"container": "sqldbcontainer"
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "adldb"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
