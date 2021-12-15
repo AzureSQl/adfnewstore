@@ -13,7 +13,7 @@
 					}
 				}
 			],
-			"script": "section Section1;\r\nshared TripCSVGit = let\r\n  AdfDoc = AzureStorage.BlobContents(\"https://azurerayappastorage.blob.core.windows.net/sqldbcontainer/TripData.csv\"),\r\n  Csv = Csv.Document(AdfDoc, [Delimiter = \",\", Encoding = TextEncoding.Utf8, QuoteStyle = QuoteStyle.Csv])\r\nin\r\n  Csv;\r\nshared UserQuery = let\r\n  Source = TripCSVGit,\r\n  #\"Promoted headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars = true])\r\nin\r\n  #\"Promoted headers\";\r\n",
+			"script": "section Section1;\r\nshared TripCSVGit = let\r\n  AdfDoc = AzureStorage.BlobContents(\"https://azurerayappastorage.blob.core.windows.net/sqldbcontainer/TripData.csv\"),\r\n  Csv = Csv.Document(AdfDoc, [Delimiter = \",\", Encoding = TextEncoding.Utf8, QuoteStyle = QuoteStyle.Csv]),\r\n  PromotedHeaders = Table.PromoteHeaders(Csv, [PromoteAllScalars = true])\r\nin\r\n  PromotedHeaders;\r\nshared UserQuery = let\r\n  Source = TripCSVGit,\r\n  #\"Removed columns\" = Table.RemoveColumns(Source, {\"hack_license\"})\r\nin\r\n  #\"Removed columns\";\r\n",
 			"documentLocale": "en-us"
 		}
 	}

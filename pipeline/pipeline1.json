@@ -33,7 +33,7 @@
 										"referenceName": "wranglingGITsink",
 										"type": "DatasetReference"
 									},
-									"script": "sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> UserQuerywranglingGITsink"
+									"script": "sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tinput(\n\t\tProductID as string,\n\t\tName as string,\n\t\tOrderYear as string,\n\t\tOrderQuantity as string\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> UserQuerywranglingGITsink"
 								}
 							]
 						}
