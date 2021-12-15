@@ -1,0 +1,9 @@
+{
+	"name": "ADFGitWrangling",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "82d38e4e-2b74-4a2b-836a-99c82fab621c",
+		"tenantId": "a2ce39cc-2c11-44ca-a45d-46a2643370bd"
+	}
+}
