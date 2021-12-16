@@ -33,7 +33,7 @@
 										"referenceName": "DelimitedText2",
 										"type": "DatasetReference"
 									},
-									"script": "sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tumask: 0022,\n\tpreCommands: [],\n\tpostCommands: [],\n\tmapColumn(\n\t\tvendor_id,\n\t\trate_code,\n\t\tstore_and_fwd_flag,\n\t\tpickup_datetime,\n\t\tdropoff_datetime,\n\t\tpassenger_count,\n\t\ttrip_time_in_secs,\n\t\ttrip_distance,\n\t\tpickup_longitude,\n\t\tpickup_latitude,\n\t\tdropoff_longitude,\n\t\tdropoff_latitude\n\t)) ~> UserQueryDelimitedText2"
+									"script": "sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tumask: 0022,\n\tpreCommands: [],\n\tpostCommands: [],\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\tmapColumn(\n\t\tvendor_id,\n\t\trate_code,\n\t\tstore_and_fwd_flag,\n\t\tpickup_datetime,\n\t\tdropoff_datetime,\n\t\tpassenger_count,\n\t\ttrip_time_in_secs,\n\t\ttrip_distance,\n\t\tpickup_longitude,\n\t\tpickup_latitude,\n\t\tdropoff_longitude,\n\t\tdropoff_latitude\n\t)) ~> UserQueryDelimitedText2"
 								}
 							]
 						}
