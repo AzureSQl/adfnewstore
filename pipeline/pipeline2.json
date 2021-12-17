@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Power Query1",
+				"name": "powerquery1",
 				"type": "ExecuteWranglingDataflow",
 				"dependsOn": [],
 				"policy": {
