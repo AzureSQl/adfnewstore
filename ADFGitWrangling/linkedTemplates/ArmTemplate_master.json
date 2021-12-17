@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ADFGitWrangling"
 		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
 		"AzureBlobStorage1WranglingGIt_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1WranglingGIt'"
@@ -14,6 +18,10 @@
 		"AzureDataLakeStorage1_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2'"
 		},
 		"AzureDataLakeStorage2GITWRANGLING_accountKey": {
 			"type": "secureString",
@@ -23,21 +31,25 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzurewranglingSink'"
 		},
-		"linkedService1_secretAccessKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'secretAccessKey' of 'linkedService1'"
-		},
 		"azurewranglingGITsink_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'azurewranglingGITsink'"
 		},
-		"AzureBlobStorage1_connectionString": {
+		"linkedService1_secretAccessKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+			"metadata": "Secure string for 'secretAccessKey' of 'linkedService1'"
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://azurerayappastorage.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://rayappaazuredatalakeg2.dfs.core.windows.net"
 		},
 		"AzureDataLakeStorage2GITWRANGLING_properties_typeProperties_url": {
 			"type": "string",
@@ -78,11 +90,17 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
 					"AzureBlobStorage1WranglingGIt_connectionString": {
 						"value": "[parameters('AzureBlobStorage1WranglingGIt_connectionString')]"
 					},
 					"AzureDataLakeStorage1_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"AzureDataLakeStorage2_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
 					},
 					"AzureDataLakeStorage2GITWRANGLING_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage2GITWRANGLING_accountKey')]"
@@ -90,17 +108,20 @@
 					"AzurewranglingSink_accountKey": {
 						"value": "[parameters('AzurewranglingSink_accountKey')]"
 					},
-					"linkedService1_secretAccessKey": {
-						"value": "[parameters('linkedService1_secretAccessKey')]"
-					},
 					"azurewranglingGITsink_connectionString": {
 						"value": "[parameters('azurewranglingGITsink_connectionString')]"
 					},
-					"AzureBlobStorage1_connectionString": {
-						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					"linkedService1_secretAccessKey": {
+						"value": "[parameters('linkedService1_secretAccessKey')]"
+					},
+					"AzureSqlDatabase1_connectionString": {
+						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
 					},
 					"AzureDataLakeStorage2GITWRANGLING_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage2GITWRANGLING_properties_typeProperties_url')]"
