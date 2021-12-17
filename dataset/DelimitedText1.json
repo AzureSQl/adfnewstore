@@ -13,7 +13,7 @@
 				"fileName": "TripData.csv",
 				"container": "sqldbcontainer"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
